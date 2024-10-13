@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: 8082
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/test_db?useSSL=false&autoReconnect=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/mybatis_test?useSSL=false&autoReconnect=true&characterEncoding=utf8
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: test
-    password: bfXa4Pt2lUUScy8jakXf
+    username: root
+    password: fangbowen2000
     # Druid datasource
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -34,7 +34,7 @@ spring:
       # 是否开启 StatViewServlet
       stat-view-servlet:
         enabled: true
-        # 访问监控页面 白名单，默认127.0.0.1
+        # 访问监控页面 白名单，默认127.0.0.1:8082/druid
         allow: 127.0.0.1
         login-username: admin
         login-password: admin
