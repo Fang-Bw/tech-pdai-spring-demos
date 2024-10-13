@@ -113,6 +113,8 @@
         <module>492-springboot-demo-file-updownload-bigfile</module>
         <module>115-springboot-demo-smart-doc</module>
         <module>171-springboot-demo-view-thymeleaf3</module>
+        <module>spring-transaction</module>
+        <module>spring-cloud</module>
     </modules>
 
     <properties>

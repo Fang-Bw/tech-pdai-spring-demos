@@ -1,0 +1,19 @@
+{
+  "passengerInfo":{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "source": "New York",
+    "destination": "Los Angeles",
+    "travelDate": "15-10-2024",
+    "pickupTime": "10:00 AM",
+    "arrivalTime": "12:00 PM",
+    "fare": 2000
+  },
+  "paymentInfo":{
+    "paymentId": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "accountNo": "acc4",
+    "amount": 250.50,
+    "cardType": "visa",
+    "passengerId": 1
+  }
+}

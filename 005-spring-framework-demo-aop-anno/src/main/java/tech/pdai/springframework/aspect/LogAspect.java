@@ -39,6 +39,8 @@ public class LogAspect {
         System.out.println("-----------------------");
         System.out.println("环绕通知: 进入方法");
         Object o = pjp.proceed();
+        //可以获取连接点的相关信息
+        pjp.getArgs();
         System.out.println("环绕通知: 退出方法");
         return o;
     }

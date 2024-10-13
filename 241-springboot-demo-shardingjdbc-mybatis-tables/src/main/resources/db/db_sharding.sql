@@ -18,6 +18,7 @@
 --
 -- Table structure for table `tb_role_0`
 --
+use test_db_sharding;
 
 DROP TABLE IF EXISTS `tb_role_0`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

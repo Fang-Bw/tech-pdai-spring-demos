@@ -9,8 +9,8 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         jdbc-url: jdbc:mysql://localhost:3306/test_db_sharding?allowPublicKeyRetrieval=true&useSSL=false&autoReconnect=true&characterEncoding=utf8
-        username: test
-        password: bfXa4Pt2lUUScy8jakXf
+        username: root
+        password:
     sharding:
       tables:
         tb_user:
