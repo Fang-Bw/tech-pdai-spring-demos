@@ -27,7 +27,6 @@ public class UserController {
      * @param user user param
      * @return user
      */
-    @ApiOperation("Add")
     @PostMapping("add")
     public ResponseResult<User> add(User user) {
         redisTemplate.opsForValue().set(String.valueOf(user.getId()), user);
@@ -37,7 +36,6 @@ public class UserController {
     /**
      * @return user list
      */
-    @ApiOperation("Find")
     @GetMapping("find/{userId}")
     public ResponseResult<User> edit(@PathVariable("userId") String userId) {
         return ResponseResult.success(redisTemplate.opsForValue().get(userId));
