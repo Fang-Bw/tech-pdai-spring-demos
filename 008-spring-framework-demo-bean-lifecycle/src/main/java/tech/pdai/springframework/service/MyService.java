@@ -30,21 +30,7 @@ public class MyService {
             throw new IllegalArgumentException("Database properties must be set");
         }
 
-        // 打开数据库连接
-        try {
-            connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-            System.out.println("Database connection established");
-            // 预加载数据
-            preloadData();
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to connect to the database", e);
-        }
-    }
-
-    private void preloadData() {
-        // 实现数据预加载逻辑
-        System.out.println("Preloading data...");
-        // 例如执行查询并填充缓存等
+        System.out.println("Database connection established");
     }
 
     @PreDestroy

@@ -3,8 +3,7 @@ package tech.pdai.springframework;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import tech.pdai.springframework.service.CglibProxyDemoServiceImpl;
 import tech.pdai.springframework.service.IJdkProxyService;
-import tech.pdai.springframework.service.JdkProxyDemoServiceImpl;
-import tech.pdai.springframework.service.MyServiceCallClassMethod;
+import tech.pdai.springframework.service.problem.ServiceA;
 
 /**
  * @author pdai
@@ -41,10 +40,7 @@ public class App {
             // e.printStackTrace();
         }
 
-        MyServiceCallClassMethod myService = context.getBean(MyServiceCallClassMethod.class);
-
-        myService.publicMethod1(); // 只有 publicMethod 会被切面增强
-        myService.publicMethod2(); // 只有 publicMethod 会被切面增强
-        myService.publicMethod3(); // publicMethod 和 protectedMethod会被切面增强
+        ServiceA serviceA = (ServiceA) context.getBean("serviceA");
+        serviceA.outCall();
     }
 }

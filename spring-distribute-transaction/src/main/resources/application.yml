@@ -1,0 +1,69 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-distribute-transaction
+  
+  # JTA事务管理器配置
+  jta:
+    atomikos:
+      properties:
+        enable-logging: true
+        log-base-name: atomikos
+        log-base-dir: ./logs
+        checkpoint-interval: 500
+        default-jta-timeout: 10000
+        max-timeout: 300000
+        default-max-wait-time-on-shutdown: 9223372036854775807
+        force-shutdown-on-vm-exit: false
+        threaded-two-phase-commit: false
+        serial-jta-transactions: true
+      
+  # 数据源配置（这里配置的是默认值，实际在DataSourceConfig中会被覆盖）
+  datasource:
+    user:
+      url: jdbc:mysql://localhost:3306/user_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    order:
+      url: jdbc:mysql://localhost:3306/order_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+# 日志配置
+logging:
+  level:
+    com.example.springdistributetransaction: DEBUG
+    org.springframework.transaction: DEBUG
+    com.atomikos: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: ./logs/application.log
+
+# Atomikos事务日志配置
+com:
+  atomikos:
+    icatch:
+      enable_logging: true
+      log_base_name: atomikos
+      log_base_dir: ./logs
+      checkpoint_interval: 500
+      default_jta_timeout: 10000
+      max_timeout: 300000

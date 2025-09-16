@@ -22,7 +22,7 @@ public class LogAspect {
     /**
      * define point cut.
      */
-    @Pointcut("execution(* tech.pdai.springframework.service.*.*(..))")
+    @Pointcut("execution(* tech.pdai.springframework.service.*.*(..)) || execution(* tech.pdai.springframework.service.problem.*.*(..))")
     private void pointCutMethod() {
     }
 

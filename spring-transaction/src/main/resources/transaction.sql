@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS spring_transaction_test;
+
+USE spring_transaction_test;
+
 CREATE TABLE IF NOT EXISTS payment_info (
                               payment_id CHAR(36) NOT NULL PRIMARY KEY,
                               account_no VARCHAR(255) NOT NULL,
