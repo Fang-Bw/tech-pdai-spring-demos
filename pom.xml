@@ -115,6 +115,7 @@
         <module>171-springboot-demo-view-thymeleaf3</module>
         <module>spring-transaction</module>
         <module>spring-cloud</module>
+        <module>spring-distribute-transaction</module>
     </modules>
 
     <properties>
